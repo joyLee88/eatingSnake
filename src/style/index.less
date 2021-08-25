@@ -1,0 +1,45 @@
+@bg-color: #afa;
+html,body {
+    background-color: #faa;
+    font: bold 20px "Courier";
+}
+#container {
+    margin: 0; padding:0;
+    box-sizing: border-box;
+}
+#container {
+    margin: 50px auto;
+    width: 360px; height: 420px;
+    background-color: @bg-color;
+    border: 10px solid #333;
+    border-radius: 20px;
+    display: flex; flex-flow: column; align-items: center; justify-content: space-around;
+
+    #stage {
+        position: relative;
+        width: 304px; height: 304px; border: 1px solid #333;
+        #snake {
+            &>div {
+                position: absolute; left: 0; top: 0;
+                width: 10px; height: 10px; background-color: #faa;
+                border-radius: 50%;
+                border: 1px solid @bg-color;
+                font-size: 8px;
+            }
+        }
+        #food {
+            width: 10px; height: 10px;
+            position: absolute; left: 40px; top: 100px; background-color: #000;
+            display: flex; flex-flow: row wrap;
+            justify-content: space-between; align-content: space-between;
+            &>div {
+                width: 4px; height: 4px; background-color: #faa;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    #score-panel {
+        display: flex; width: 300px;
+        justify-content: space-between;
+    }
+}
